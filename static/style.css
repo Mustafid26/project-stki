@@ -1,0 +1,59 @@
+* {
+  font-family: "Roboto", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.highlight {
+  font-weight: bold;
+  color: #ff5722; /* Atau warna yang Anda inginkan */
+  background-color: #fff3e0; /* Warna latar belakang untuk sorotan */
+}
+.anton-regular {
+  font-family: "Anton", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.sora {
+  font-family: "Sora", serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
+body {
+  background-color: #f6efff;
+}
+.info-text {
+  margin-top: 10rem;
+  padding: 20px;
+  text-align: center;
+  font-size: 1.2rem;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+.search-bar {
+  background-color: #E4D9F1;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+.card-placeholder {
+  background-color: #e9ecef;
+  height: 100px;
+  border-radius: 8px;
+}
+.highlight {
+  background-color: yellow;
+  font-weight: bold;
+}
+.btn-ly {
+  width: 5rem;
+  height: 1.5rem;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn-cari {
+  width: 10rem;
+}

@@ -12,6 +12,7 @@ model = joblib.load('reff_model.pkl')
 data = pd.read_json('katalagu-indonesia-2000an.json')
 data['title'] = data['lyrics'].apply(lambda x: x.get('title', 'Unknown') if isinstance(x, dict) else 'Unknown')
 data['artist'] = data['lyrics'].apply(lambda x: x.get('artist', 'Unknown') if isinstance(x, dict) else 'Unknown')
+data['lyric'] = data['lyrics'].apply(lambda x: x.get('lyric', 'Unknown') if isinstance(x, dict) else 'Unknown')
 
 @app.route('/src/<path:filename>')
 def serve_static(filename):
@@ -29,9 +30,18 @@ def search_reff():
     results = []
     for idx in indices[0]:
         song = data.iloc[idx]
-        results.append({"judul": song['title'], "artist": song['artist']})
+        results.append({"judul": song['title'], "artist": song['artist'], "lyric": song['lyric']})
     
     return jsonify(results)
 
+@app.route('/lyric')
+def lyric():
+    # Get query parameters from URL
+    title = request.args.get('title')
+    artist = request.args.get('artist')
+    lyric = request.args.get('lyric')
+
+    # Render the lyric page with the song data
+    return render_template('lyric.html', title=title, artist=artist, lyric=lyric)
 if __name__ == '__main__':
     app.run(debug=True)
