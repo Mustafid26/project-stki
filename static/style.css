@@ -24,17 +24,17 @@ body {
   background-color: #f6efff;
 }
 .info-text {
-  margin-top: 10rem;
+  margin-top: 5rem;
   padding: 20px;
   text-align: center;
   font-size: 1.2rem;
   border-radius: 8px;
-  margin-bottom: 20px;
 }
 .search-bar {
-  background-color: #E4D9F1;
+  background-color: #e4d9f1;
   padding: 10px;
   border-radius: 8px;
+  margin-top: 3rem;
   margin-bottom: 20px;
 }
 .card-placeholder {
@@ -56,4 +56,21 @@ body {
 }
 .btn-cari {
   width: 10rem;
+}
+.chewy-regular {
+  font-family: "Chewy", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.pacifico-regular {
+  font-family: "Pacifico", serif;
+  font-weight: 200;
+  font-style: normal;
+}
+.shantell-sans {
+  font-family: "Shantell Sans", serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+  font-variation-settings: "BNCE" 0, "INFM" 0, "SPAC" 0;
 }

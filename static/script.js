@@ -11,6 +11,7 @@ document.getElementById('searchForm').addEventListener('submit', async (e) => {
     });
 
     const results = await response.json();
+    console.log(results);
     const resultsDiv = document.getElementById('results');
     resultsDiv.innerHTML = '';
 
@@ -76,11 +77,11 @@ document.getElementById('searchForm').addEventListener('submit', async (e) => {
         // Create the title, artist, and lyric content
         const title = document.createElement('div');
         title.className = "card-title";
-        title.innerHTML = highlightText(result.judul, query);
+        title.innerHTML = result.judul;
 
         const artist = document.createElement('div');
         artist.className = "text-muted";
-        artist.innerHTML = highlightText(result.artist, query);
+        artist.innerHTML = result.artist;
 
         const divButton = document.createElement('div');
         divButton.className = "d-flex justify-content-end";
@@ -110,9 +111,3 @@ document.getElementById('searchForm').addEventListener('submit', async (e) => {
     // Append the row container to the results section
     resultsDiv.appendChild(rowContainer);
 });
-
-// Function to highlight the search query in the text
-const highlightText = (text, query) => {
-    const regex = new RegExp(`(${query})`, 'gi'); // Case-insensitive match
-    return text.replace(regex, '<span class="highlight">$1</span>');
-};
